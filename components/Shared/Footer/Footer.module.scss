@@ -1,0 +1,44 @@
+@import "../../../styles/vars.scss";
+
+.clickBait {
+  height: 225px;
+  background-color: #322f2f;
+  width: 100%;
+  padding: 0 16.5%;
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 600px) {
+    flex-wrap: nowrap;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 140px;
+  }
+}
+
+.clickBaitMessage {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.footer {
+  background-color: $grey3;
+  color: #a5a5a5;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 16.5%;
+  font-size: 18px;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.credentials {
+  text-transform: uppercase;
+}

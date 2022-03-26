@@ -1,0 +1,17 @@
+@import "../../../styles/vars.scss";
+
+.root {
+  height: 120px;
+  background-color: $primary;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  padding: 25px 16.5%;
+  color: #fff;
+  font-size: 24px;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

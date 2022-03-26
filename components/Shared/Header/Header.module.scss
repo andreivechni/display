@@ -1,0 +1,94 @@
+@import "../../../styles/vars.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 940px;
+  margin: auto;
+
+  @media screen and (min-width: 600px) {
+    margin-bottom: 28px;
+  }
+}
+
+.subheader {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 1rem;
+  border-bottom: 1px solid $grey1;
+  align-items: center;
+  height: 125px;
+  background-color: #fff;
+}
+
+.menuIcon {
+  display: block;
+  width: 35px;
+  height: 35px;
+  fill: $secondary;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.menuIcon:hover {
+  cursor: pointer;
+  fill: $primary;
+}
+
+.logo {
+  text-transform: uppercase;
+  display: flex;
+  font-size: 24px;
+  color: $secondary;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.logoText {
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: block;
+  }
+}
+
+.social {
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: flex;
+    gap: 7px;
+  }
+}
+
+.social svg {
+  fill: $grey1;
+  cursor: pointer;
+}
+
+.twitter:hover {
+  fill: #00bbf5;
+}
+
+.facebook:hover {
+  fill: #385898;
+}
+
+.rss:hover {
+  fill: #ee802f;
+}
+
+.pinterest:hover {
+  fill: #c8232c;
+}
+
+.google:hover {
+  fill: #db4a39;
+}
+
+.dribbble:hover {
+  fill: #ea4c89;
+}

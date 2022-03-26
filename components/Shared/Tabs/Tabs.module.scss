@@ -1,0 +1,67 @@
+@import "../../../styles/vars.scss";
+
+.tabList {
+  background-color: $grey3;
+  display: flex;
+  padding-left: 0;
+  justify-content: space-between;
+  height: 100px;
+  @media screen and (min-width: 600px) {
+    height: 200px;
+  }
+}
+
+.label {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: $secondary;
+}
+
+.label svg {
+  fill: $secondary;
+  z-index: 2;
+}
+
+.label span {
+  z-index: 2;
+}
+
+.activeTab span {
+  color: $grey4;
+}
+
+.activeTab svg {
+  fill: $grey4;
+}
+
+.tabContainer {
+  margin-top: 0px;
+  padding: 25px;
+  max-width: 940px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $grey1;
+  height: 100%;
+  width: 100%;
+}
+
+.desktopOnly {
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: inline;
+  }
+}

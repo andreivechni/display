@@ -1,0 +1,48 @@
+@import "../../../styles/vars.scss";
+
+.root {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(63, 63, 63, 0.9);
+  top: 0;
+  left: 0;
+  margin-top: 125px;
+  padding-top: 20px;
+  gap: 29px;
+  font-size: 48px;
+  z-index: 1;
+
+  @media screen and (min-width: 600px) {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    position: static;
+    background-color: transparent;
+    z-index: 0;
+  }
+}
+
+.hidden {
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: flex;
+  }
+}
+
+.item {
+  color: $secondary;
+  text-align: center;
+  @media screen and (min-width: 600px) {
+    text-align: auto;
+  }
+}
+
+.active {
+  color: $primary;
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/vars.scss";
+
+.button {
+  background-color: $primary;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  min-width: 220px;
+  min-height: 40px;
+}
+
