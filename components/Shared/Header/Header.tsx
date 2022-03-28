@@ -17,9 +17,9 @@ const Header = () => {
 
   useEffect(() => {
     if (isNavShown) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     }
   }, [isNavShown]);
 
