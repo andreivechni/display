@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import Link from "next/link";
-import { routes } from "../../../constants";
+import { ROUTES } from "../../../constants";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -18,19 +18,19 @@ const Footer = () => {
           Copyright 2013 Display. All Rights Reserved.
         </div>
         <div className={styles.nav}>
-          <Link href={routes.home}>
+          <Link href={ROUTES.home}>
             <a>Home</a>
           </Link>{" "}
           /{" "}
-          <Link href={routes.about}>
+          <Link href={ROUTES.about}>
             <a>About</a>
           </Link>{" "}
           /{" "}
-          <Link href={routes.work}>
+          <Link href={ROUTES.work}>
             <a>Work</a>
           </Link>{" "}
           /{" "}
-          <Link href={routes.contact}>
+          <Link href={ROUTES.contact}>
             <a>Contact</a>
           </Link>
         </div>
