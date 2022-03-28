@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
-import { routes } from "../../../constants";
+import { ROUTES } from "../../../constants";
 import styles from "./Nav.module.scss";
 
 type NavProps = {
@@ -14,41 +14,41 @@ const Nav = ({ isShown, setIsShown }: NavProps) => {
   const { pathname } = useRouter();
   return (
     <nav className={cn(styles.root, { [styles.hidden]: !isShown })}>
-      <Link href={routes.home}>
+      <Link href={ROUTES.home}>
         <a
           onClick={() => setIsShown(false)}
           className={cn(styles.item, {
-            [styles.active]: routes.home === pathname,
+            [styles.active]: ROUTES.home === pathname,
           })}
         >
           Home
         </a>
       </Link>
-      <Link href={routes.about}>
+      <Link href={ROUTES.about}>
         <a
           onClick={() => setIsShown(false)}
           className={cn(styles.item, {
-            [styles.active]: routes.about === pathname,
+            [styles.active]: ROUTES.about === pathname,
           })}
         >
           About
         </a>
       </Link>
-      <Link href={routes.work}>
+      <Link href={ROUTES.work}>
         <a
           onClick={() => setIsShown(false)}
           className={cn(styles.item, {
-            [styles.active]: routes.work === pathname,
+            [styles.active]: ROUTES.work === pathname,
           })}
         >
           Work
         </a>
       </Link>
-      <Link href={routes.contact}>
+      <Link href={ROUTES.contact}>
         <a
           onClick={() => setIsShown(false)}
           className={cn(styles.item, {
-            [styles.active]: routes.contact === pathname,
+            [styles.active]: ROUTES.contact === pathname,
           })}
         >
           Contact
