@@ -17,9 +17,6 @@ const About = () => {
         <div className={styles.intro}>
           <div className={styles.introImg}>
             <Image
-              // layout="fixed"
-              // height={260}
-              // width={380}
               src={dude}
               alt="cool busy young man"
             />
