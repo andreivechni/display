@@ -1,0 +1,34 @@
+@import "../../styles/vars.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.root input,
+.root textarea {
+  outline: none;
+  border: 2px solid $grey2;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 22px;
+  max-width: 350px;
+
+  @media screen and (min-width: $desktop) {
+    height: 45px;
+  }
+}
+
+.root textarea {
+  height: 220px;
+  max-width: 560px;
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.root button {
+  width: 140px;
+  min-width: 140px;
+  height: 40px;
+}
