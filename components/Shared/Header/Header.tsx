@@ -10,18 +10,13 @@ import Pinterest from "../../../assets/img/socials/pinterest.svg";
 import Google from "../../../assets/img/socials/google.svg";
 import Dribbble from "../../../assets/img/socials/dribbble.svg";
 import Bars from "../../../assets/img/bars-solid.svg";
+import useLockScroll from "../../../hooks/useLockScroll";
 import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isNavShown, setIsNavShown] = useState(false);
 
-  useEffect(() => {
-    if (isNavShown) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "scroll";
-    }
-  }, [isNavShown]);
+  useLockScroll(isNavShown);
 
   return (
     <div className={styles.root}>
