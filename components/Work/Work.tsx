@@ -5,6 +5,7 @@ import List from "../../assets/img/work/list.svg";
 import { BASE_URL, PROJECT_CATEGORIES } from "../../constants";
 import cn from "classnames";
 import Button from "../Shared/Button/Button";
+import Heading from "../Shared/Heading/Heading";
 import styles from "./Work.module.scss";
 
 const AD_FETCH_LIMIT = 3;
@@ -86,50 +87,53 @@ const Work = () => {
 
   return (
     <div className={styles.root}>
-      <Header setFilter={setFilter} view={view} setView={setView}></Header>
+      <Heading>Check Out What I can Do</Heading>
+      <div className={styles.content}>
+        <Header setFilter={setFilter} view={view} setView={setView}></Header>
 
-      {loading && <p>Loading...</p>}
+        {error && <p>Error</p>}
 
-      {error && <p>Error</p>}
+        {data && data.length === 0 && <p>No results</p>}
 
-      {data && data.length === 0 && <p>No results</p>}
-
-      {data && data.length > 0 && (
-        <div
-          className={cn({
-            [styles.grid]: view === "grid",
-            [styles.list]: view === "list",
-          })}
-        >
-          {data.map((item) => {
-            return (
-              <div key={item.id} className={styles.gridItem}>
-                <img src={item.previewUrl} alt="preview" />
-                <div
-                  className={cn(styles.description, {
-                    [styles.hidden]: view === "grid",
-                  })}
-                >
-                  {item.description}
+        {data && data.length > 0 && (
+          <div
+            className={cn({
+              [styles.grid]: view === "grid",
+              [styles.list]: view === "list",
+            })}
+          >
+            {data.map((item) => {
+              return (
+                <div key={item.id} className={styles.gridItem}>
+                  <img src={item.previewUrl} alt="preview" />
+                  <div
+                    className={cn(styles.description, {
+                      [styles.hidden]: view === "grid",
+                    })}
+                  >
+                    {item.description}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
+              );
+            })}
+          </div>
+        )}
 
-      {/*
-        Since infinite loading is a deprecated concept i've
-        let myself to make a button-based pagination.
-        More on that:
-        https://medium.com/simple-human/7-reasons-why-infinite-scrolling-is-probably-a-bad-idea-a0139e13c96b
-      */}
+        {loading && <p>Loading...</p>}
 
-      {isNextPageAvailable && (
-        <div className={styles.paginationControls}>
-          <Button onClick={handleNextPage}>Load more</Button>
-        </div>
-      )}
+        {/*
+          Since infinite loading is a deprecated concept i've
+          let myself to make a button-based pagination.
+          More on that:
+          https://medium.com/simple-human/7-reasons-why-infinite-scrolling-is-probably-a-bad-idea-a0139e13c96b
+        */}
+
+        {isNextPageAvailable && (
+          <div className={styles.paginationControls}>
+            <Button onClick={handleNextPage}>Load more</Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
