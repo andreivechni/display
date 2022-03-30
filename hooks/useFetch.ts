@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import countTotal from "../api/json-server/count";
-import { BASE_URL } from "../constants";
 
 type Data<T> = {
   data: Array<T> | null;
@@ -66,6 +65,7 @@ const useFetch = <T>(
   const fetchMore = useCallback(
     async (page: number, limit: number) => {
       if (!data) return [];
+      setLoading(true)
       const response = await fetch(
         `${url}?_page=${page}&_limit=${limit}`,
         {
@@ -80,6 +80,7 @@ const useFetch = <T>(
       if (merged.length === total) setIsNextPageAvailable(false);
 
       setData(merged);
+      setLoading(false)
     },
     [data, url]
   );

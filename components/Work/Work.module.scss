@@ -1,6 +1,6 @@
 @import "../../styles/vars.scss";
 
-.root {
+.content {
   display: flex;
   flex-direction: column;
   max-width: 940px;
@@ -52,7 +52,6 @@
 
 .grid {
   display: grid;
-
   grid-template-rows: 220px 220px 220px;
   gap: 20px;
   grid-template-columns: 300px;
@@ -74,7 +73,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 
   @media screen and (max-width: $mobile) {
     font-size: 12px;

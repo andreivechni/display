@@ -1,3 +1,98 @@
+@import "../../styles/vars.scss";
+
 .root {
-  
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  color: $secondary;
+}
+
+.content {
+  max-width: 940px;
+  width: 100%;
+  margin: auto;
+}
+
+.mapContainer {
+  background-color: $secondary;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0 25px;
+
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-areas:
+      "feedback info"
+      "feedback hours";
+    grid-template-columns: 560px auto;
+    grid-template-rows: 188px auto;
+    row-gap: 48px;
+    column-gap: 110px;
+  }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $desktop) {
+    grid-area: feedback;
+  }
+}
+
+.heading {
+  font-family: Novecento Wide;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.info {
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  flex-direction: column;
+  line-height: 22px;
+  margin-bottom: 28px;
+  max-width: 350px;
+  @media screen and (min-width: $desktop) {
+    grid-area: info;
+  }
+}
+
+.infoRow {
+  margin-bottom: 5px;
+}
+
+.hours {
+  grid-area: hours;
+}
+
+.scheduleRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scheduleCell {
+  text-align: start;
+  @media screen and (min-width: $desktop) {
+    grid-area: info;
+    min-width: 200px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.email {
+  color: $primary;
 }
