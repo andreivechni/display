@@ -1,8 +1,20 @@
 import React from "react";
-import Heading from "../Shared/Heading/Heading";
+
+import Hero from "./Hero";
+import KnowUs from "./KnowUs";
+import Portfolio from "./Portfolio";
+import styles from "./Home.module.scss";
 
 const Home = () => {
-  return <div>Home</div>;
+  
+
+  return (
+    <div className={styles.root}>
+      <Hero />
+      <KnowUs />
+      <Portfolio />
+    </div>
+  );
 };
 
 export default Home;

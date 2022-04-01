@@ -12,11 +12,12 @@ type Data<T> = {
 const useFetch = <T>(
   url: string,
   // page: number,
-  limit: number,
-  filter: string | null,
   method: string,
-  body?: object
+  options: object = {}
 ): Data<T> => {
+  
+  const { limit = "", filter = "", body } = options;
+
   const stringifiedBody = body ? JSON.stringify(body) : null;
 
   const [data, setData] = useState<Array<T> | null>(null);
@@ -65,13 +66,10 @@ const useFetch = <T>(
   const fetchMore = useCallback(
     async (page: number, limit: number) => {
       if (!data) return [];
-      setLoading(true)
-      const response = await fetch(
-        `${url}?_page=${page}&_limit=${limit}`,
-        {
-          method: "GET",
-        }
-      );
+      setLoading(true);
+      const response = await fetch(`${url}?_page=${page}&_limit=${limit}`, {
+        method: "GET",
+      });
 
       const total = countTotal(response);
       const parsedResponse = await response.json();
@@ -80,7 +78,7 @@ const useFetch = <T>(
       if (merged.length === total) setIsNextPageAvailable(false);
 
       setData(merged);
-      setLoading(false)
+      setLoading(false);
     },
     [data, url]
   );

@@ -1,0 +1,23 @@
+@import "../../../styles/vars.scss";
+
+.root {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.slide {
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    min-width: auto;
+  }
+}
+
+.name {
+  font-size: 18px;
+}

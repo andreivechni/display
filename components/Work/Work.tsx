@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import Grid from "../../assets/img/work/grid.svg";
 import List from "../../assets/img/work/list.svg";
 import { BASE_URL, PROJECT_CATEGORIES } from "../../constants";
-import cn from "classnames";
+import classnames from "classnames";
 import Button from "../Shared/Button/Button";
 import Heading from "../Shared/Heading/Heading";
 import styles from "./Work.module.scss";
@@ -49,7 +49,7 @@ const Header = ({ setFilter, view, setView }: HeaderProps) => {
       </div>
       <div className={styles.controls}>
         <button
-          className={cn(styles.button, {
+          className={classnames(styles.button, {
             [styles.activeButton]: view === "grid",
           })}
           onClick={() => setView("grid")}
@@ -57,7 +57,7 @@ const Header = ({ setFilter, view, setView }: HeaderProps) => {
           <Grid />
         </button>
         <button
-          className={cn(styles.button, {
+          className={classnames(styles.button, {
             [styles.activeButton]: view === "list",
           })}
           onClick={() => setView("list")}
@@ -78,7 +78,7 @@ const Work = () => {
     INITIAL_PAGE_SIZE + (page - AD_FETCH_LIMIT - 1) * AD_FETCH_LIMIT;
 
   const { data, loading, error, fetchMore, isNextPageAvailable } =
-    useFetch<Project>(`${BASE_URL}/projects`, limit, filter, "GET");
+    useFetch<Project>(`${BASE_URL}/projects`, "GET", { limit, filter });
 
   const handleNextPage = useCallback(() => {
     fetchMore(page, AD_FETCH_LIMIT);
@@ -97,7 +97,7 @@ const Work = () => {
 
         {data && data.length > 0 && (
           <div
-            className={cn({
+            className={classnames({
               [styles.grid]: view === "grid",
               [styles.list]: view === "list",
             })}
@@ -107,7 +107,7 @@ const Work = () => {
                 <div key={item.id} className={styles.gridItem}>
                   <img src={item.previewUrl} alt="preview" />
                   <div
-                    className={cn(styles.description, {
+                    className={classnames(styles.description, {
                       [styles.hidden]: view === "grid",
                     })}
                   >

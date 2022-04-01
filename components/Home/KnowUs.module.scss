@@ -1,0 +1,71 @@
+@import "../../styles/vars.scss";
+
+.knowUs {
+  justify-content: center;
+  padding: 15px;
+  background-color: #efefef;
+  height: 200px;
+  display: flex;
+  gap: 30px;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  color: $grey2;
+
+  @media screen and (min-width: $tablet) {
+    height: 320px;
+    padding: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 320px;
+    padding: 40px;
+  }
+}
+
+.knowUs .info {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.heading {
+  font-size: 5.5vw;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $warning;
+  width: 300px;
+  cursor: pointer;
+
+  @media screen and (min-width: $desktop) {
+    min-width: 380px;
+  }
+}
+
+.play:hover svg {
+  transform: scale(1.5);
+  transition: transform 0.2s;
+}
+
+.description {
+  max-width: 516px;
+  font-size: 14px;
+  line-height: 22px;
+}
