@@ -1,9 +1,5 @@
 const env = process.env.NODE_ENV;
-let BASE_URL = "";
-
-if (env == "development") {
-  BASE_URL = "http://localhost:3001";
-}
+let BASE_URL = "api/";
 
 const ROUTES = {
   home: "/",
