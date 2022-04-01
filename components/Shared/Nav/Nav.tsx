@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import cn from "classnames";
+import classnames from "classnames";
 import { ROUTES } from "../../../constants";
 import styles from "./Nav.module.scss";
 
@@ -13,11 +13,11 @@ type NavProps = {
 const Nav = ({ isShown, setIsShown }: NavProps) => {
   const { pathname } = useRouter();
   return (
-    <nav className={cn(styles.root, { [styles.hidden]: !isShown })}>
+    <nav className={classnames(styles.root, { [styles.hidden]: !isShown })}>
       <Link href={ROUTES.home}>
         <a
           onClick={() => setIsShown(false)}
-          className={cn(styles.item, {
+          className={classnames(styles.item, {
             [styles.active]: ROUTES.home === pathname,
           })}
         >
@@ -27,7 +27,7 @@ const Nav = ({ isShown, setIsShown }: NavProps) => {
       <Link href={ROUTES.about}>
         <a
           onClick={() => setIsShown(false)}
-          className={cn(styles.item, {
+          className={classnames(styles.item, {
             [styles.active]: ROUTES.about === pathname,
           })}
         >
@@ -37,7 +37,7 @@ const Nav = ({ isShown, setIsShown }: NavProps) => {
       <Link href={ROUTES.work}>
         <a
           onClick={() => setIsShown(false)}
-          className={cn(styles.item, {
+          className={classnames(styles.item, {
             [styles.active]: ROUTES.work === pathname,
           })}
         >
@@ -47,7 +47,7 @@ const Nav = ({ isShown, setIsShown }: NavProps) => {
       <Link href={ROUTES.contact}>
         <a
           onClick={() => setIsShown(false)}
-          className={cn(styles.item, {
+          className={classnames(styles.item, {
             [styles.active]: ROUTES.contact === pathname,
           })}
         >

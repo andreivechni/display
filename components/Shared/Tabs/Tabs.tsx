@@ -1,6 +1,6 @@
 import React, { Children, ReactNode, useState } from "react";
 import TabProps from "./Tab";
-import cn from "classnames";
+import classnames from "classnames";
 import styles from "./Tabs.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -30,7 +30,9 @@ const Tabs = ({ children }: TabsProps) => {
           return (
             <div
               key={i}
-              className={cn(styles.label, { [styles.activeTab]: isActive })}
+              className={classnames(styles.label, {
+                [styles.activeTab]: isActive,
+              })}
               onClick={() => {
                 setActiveIndex(i);
               }}
@@ -39,7 +41,7 @@ const Tabs = ({ children }: TabsProps) => {
               <span className={styles.desktopOnly}>{label}</span>
               {isActive && (
                 <motion.div
-                  className={cn(styles.background, styles.label)}
+                  className={classnames(styles.background, styles.label)}
                   layoutId="background"
                 ></motion.div>
               )}

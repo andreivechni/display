@@ -1,0 +1,98 @@
+@import "../../styles/vars.scss";
+
+.root {
+  width: 100%;
+  background-image: url("../../assets/img/home/sunburst.png"),
+    linear-gradient(0deg, #ffffff 50%, $primary 50%);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% 400px;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: $desktop) {
+    height: 772px;
+    background-size: 100% 100%;
+  }
+}
+
+.content {
+  top: 280px;
+  padding: 0 25px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (min-width: $tablet) {
+    top: 120px;
+    left: auto;
+    transform: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    top: 200px;
+    left: auto;
+    transform: none;
+  }
+}
+
+.devices {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 40%;
+  margin-bottom: 15px;
+
+  @media screen and (min-width: $tablet) {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 350px;
+    margin-bottom: 100px;
+  }
+}
+
+.text {
+  color: $secondary;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  max-width: 736px;
+  margin: auto;
+  margin-bottom: 15px;
+
+  @media screen and (min-width: $tablet) {
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    line-height: 24px;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.button {
+  background-color: $primary;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  max-width: 184px;
+  min-height: 40px;
+  font-family: Novecento Wide;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

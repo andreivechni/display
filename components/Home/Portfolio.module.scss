@@ -1,0 +1,102 @@
+@import "../../styles/vars.scss";
+
+.portfolio {
+  width: 100%;
+  font-family: "Helvetica Neue";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
+  gap: 20px;
+}
+
+.heading {
+  font-size: 5.5vw;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+.sliderInfo {
+  max-width: 741px;
+  font-size: 14px;
+}
+
+.button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button > svg {
+  fill: $grey3;
+}
+
+.button:hover > svg {
+  fill: $primary;
+}
+
+.activeButton > svg {
+  fill: $primary;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.disabled svg {
+  fill: $danger;
+}
+
+.slideControls {
+  display: flex;
+  gap: 62px;
+  align-items: center;
+
+  height: 300px;
+}
+
+.slideInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+  width: 644px;
+}
+
+.work {
+  display: flex;
+  gap: 20px;
+  padding: 15px 25px;
+  flex-direction: column;
+
+  @media screen and (min-width: $mobile) {
+    flex-direction: row;
+  }
+}
+
+.workInfo {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.mobileOnly {
+  display: block;
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+}
