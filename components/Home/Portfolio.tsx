@@ -98,7 +98,7 @@ const Portfolio = () => {
         <div className={styles.list}>
           {data.map((item) => {
             return (
-              <div className={styles.work}>
+              <div key={item.id} className={styles.work}>
                 <Image src={item.previewUrl} width={300} height={200}></Image>
                 <div className={styles.workInfo}>
                   <div className={styles.name}>{item.name}</div>
