@@ -104,7 +104,9 @@ const Portfolio = () => {
                   <div className={styles.name}>{item.name}</div>
                   <div className={styles.description}>{item.description}</div>
                 </div>
-                <div className={cn(styles.name, styles.mobileOnly)}>{item.name}</div>
+                <div className={cn(styles.name, styles.mobileOnly)}>
+                  {item.name}
+                </div>
               </div>
             );
           })}

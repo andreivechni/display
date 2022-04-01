@@ -29,8 +29,6 @@ const useFetch = <T>(
 ): Data<T> => {
   const { limit, filter, body } = options ? options : defaultOptions;
 
-  const stringifiedBody = body ? JSON.stringify(body) : null;
-
   const [data, setData] = useState<Array<T> | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -39,7 +37,11 @@ const useFetch = <T>(
   useEffect(() => {
     setLoading(true);
 
-    let updatedUrl = url.concat(`?_limit=${limit}`);
+    let updatedUrl = url;
+
+    if (limit) {
+      updatedUrl = updatedUrl.concat(`?_limit=${limit}`);
+    }
 
     if (filter) {
       updatedUrl = updatedUrl.concat(`&category_like=${filter}`);
@@ -47,7 +49,6 @@ const useFetch = <T>(
 
     fetch(updatedUrl, {
       method,
-      body: stringifiedBody,
     })
       .then((response) => {
         if (!response.ok) throw new Error("Something went wrong");
@@ -72,7 +73,7 @@ const useFetch = <T>(
         setError(error);
       })
       .finally(() => setLoading(false));
-  }, [body, filter, limit, method, stringifiedBody, url]);
+  }, [body, filter, limit, method, url]);
 
   const fetchMore = useCallback(
     async (page: number, limit: number) => {

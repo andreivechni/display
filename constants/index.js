@@ -1,5 +1,5 @@
 const env = process.env.NODE_ENV;
-let BASE_URL = "api/";
+let BASE_URL = "/api";
 
 const ROUTES = {
   home: "/",
