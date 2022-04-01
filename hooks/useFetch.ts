@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import countTotal from "../api/json-server/count";
 
+const defaultOptions = {
+  limit: "",
+  filter: "",
+  body: {},
+};
+
 type Data<T> = {
   data: Array<T> | null;
   loading: boolean;
@@ -9,14 +15,19 @@ type Data<T> = {
   isNextPageAvailable: boolean;
 };
 
+type FetchOptions = {
+  limit?: number | undefined;
+  filter?: string | null | undefined;
+  body?: object | undefined;
+};
+
 const useFetch = <T>(
   url: string,
   // page: number,
   method: string,
-  options: object = {}
+  options?: FetchOptions
 ): Data<T> => {
-  
-  const { limit = "", filter = "", body } = options;
+  const { limit, filter, body } = options ? options : defaultOptions;
 
   const stringifiedBody = body ? JSON.stringify(body) : null;
 
